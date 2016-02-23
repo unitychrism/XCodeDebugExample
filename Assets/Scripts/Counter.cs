@@ -14,9 +14,6 @@ public class Counter : MonoBehaviour {
 	void Start () {
 		lastSecond = 0;
 		counterText = GameObject.Find ("CounterText").GetComponent<Text> ();
-
-		// Throw an exception on start
-		throw new Exception ("Start counting exception!");
 	}
 	
 	// Update is called once per frame
@@ -29,7 +26,7 @@ public class Counter : MonoBehaviour {
 
 			// Throw exception and change bg color every 5 seconds
 			if (newSecond % 5 == 0) {
-				throw new Exception("Five seconds elapsed exception!");
+				Debug.Log ("Seconds: " + newSecond);
 			}
 
 			lastSecond = newSecond;
